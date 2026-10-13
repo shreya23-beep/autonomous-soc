@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": 1710000000,
+    "source": "192.168.1.105",
+    "target": "bastion-host",
+    "entity_type": "IP_TO_HOST",
+    "action": "SSH_BRUTE_FORCE",
+    "user": "ubuntu",
+    "mitre_technique": "T1110.001",
+    "severity": "MEDIUM"
+  },
+  {
+    "timestamp": 1710000015,
+    "source": "bastion-host",
+    "target": "root",
+    "entity_type": "HOST_TO_USER",
+    "action": "SUDO_PRIVILEGE_ESC",
+    "user": "ubuntu",
+    "mitre_technique": "T1548.003",
+    "severity": "HIGH"
+  },
+  {
+    "timestamp": 1710000030,
+    "source": "bastion-host",
+    "target": "prod-db-internal",
+    "entity_type": "HOST_TO_HOST",
+    "action": "LATERAL_SMB_PIVOT",
+    "user": "root",
+    "mitre_technique": "T1021.002",
+    "severity": "CRITICAL"
+  },
+  {
+    "timestamp": 1710000045,
+    "source": "prod-db-internal",
+    "target": "cloud-s3-backup",
+    "entity_type": "HOST_TO_SERVICE",
+    "action": "CREDENTIAL_DUMP",
+    "user": "db_admin",
+    "mitre_technique": "T1003",
+    "severity": "HIGH"
+  },
+  {
+    "timestamp": 1710000060,
+    "source": "prod-db-internal",
+    "target": "198.51.100.42",
+    "entity_type": "HOST_TO_IP",
+    "action": "DATA_EXFILTRATION_HTTPS",
+    "user": "root",
+    "mitre_technique": "T1048",
+    "severity": "CRITICAL"
+  }
+]
